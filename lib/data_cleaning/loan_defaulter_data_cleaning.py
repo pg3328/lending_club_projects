@@ -3,6 +3,14 @@ from pyspark.sql.types import *
 from pyspark.sql.functions import *
 import math
 
+"""
+    This file helps to clean loan_defaulter and divide the dataset into 
+    1) Memberids of the defaulted members
+    2) Delinq data for members (if null the record will not be available). 
+    3) Members public record information (bankcruptcies, enquiries in last 6 months etc..)
+    @author : Pradeep Kumar Gontla
+"""
+
 spark = SparkSession.builder \
     .appName('project') \
     .config('spark.ui.port', '0') \
