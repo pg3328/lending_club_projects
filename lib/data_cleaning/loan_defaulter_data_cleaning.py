@@ -29,7 +29,7 @@ def get_loan_defaulter_data():
     return spark.read.csv("project/raw_divided_data/loans_defaulters_csv",schema=schema)
 
 """
-    Cast a few columns into the respective data types and remove nulls in the columns and add 0. 
+    Cast delinq column into into the respective data types and remove nulls in the columns and add 0. 
 """
 def cast_dtypes():
     loans_raw_df = get_loan_defaulter_data()

@@ -31,7 +31,7 @@ def add_ingestion_timestamp():
     dropping nulls if particular columns are null 
 """
 def drop_null_rows():
-    loans_repayment_data = get_loans_repayment_data()
+    loans_repayment_data = add_ingestion_timestamp()
     null_column_lookup = ["total_principal_received", "total_interest_received", "total_late_fee_received", "total_payment_received", "last_payment_amount"]
     return loans_repayment_data.dropna(subset = null_column_lookup)
 

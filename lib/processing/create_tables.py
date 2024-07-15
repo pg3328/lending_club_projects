@@ -40,6 +40,7 @@ stored as parquet
 location 'project/cleaned_data/loans_cleaned_data'
 """)
 
+spark.sql("drop table if exists lending_club_project_pg3328.loans_repayments")
 spark.sql("""CREATE EXTERNAL TABLE if not exists lending_club_project_pg3328.loans_repayments(loan_id string, total_principal_received float,
 total_interest_received float,total_late_fee_received float,total_payment_received float,last_payment_amount float,
 last_payment_date string,next_payment_date string,ingest_date timestamp)
